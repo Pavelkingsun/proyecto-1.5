@@ -1,0 +1,76 @@
+nombre algoritmo Sistema de costos
+
+definir precioOriginal como real
+definir descuento como real 
+definir cantidad como entero
+definir destino como String
+definir peso como real
+
+
+
+imprimir "coloque el precio original del producto"
+Leer precio
+imprimir "tiene cupon de descuento"
+Leer tieneCupon
+
+Si tieneCupon Entonces
+    imprimir " coloque el descuento del cupon"
+    Leer Descuento
+    preciodescuento = precioOriginal * (Descuento / 100)
+Sino
+    descuento = 0
+FinSi
+
+imprimir " coloque la cantidad de productos"
+
+Leer cantidad
+
+    Si piezas < 10 Entonces 
+        Retornar 0
+    Sino Si piezas >= 10 y piezas < 20 Entonces
+        Retornar 0.10
+    Sino Si piezas >= 20 y piezas < 50 Entonces
+        Retornar 0.20
+    Sino
+        Retornar 0.35
+    FinSi
+
+
+
+imprimir "inserte si su destino es Nacional o internacional"
+Leer destino
+
+imprimir "inserte peso de los productos en kg"
+Leer peso
+
+Si destino "Nacional" Entonces
+    costoEnvio =  si peso < 2 
+                  retornar 50
+                  Sino si peso > 2 y peso < 5
+                  retornar 75
+                  sino
+                  retornar 100
+ 
+Sino destino "internacional" Entonces
+    costoEnvio =  si peso < 2 
+                  retornar 100
+                  Sino si peso > 2 y peso < 5
+                  retornar 150
+                  sino
+                  retornar 200
+FinSi
+
+impuesto = precioOriginal * 0.16  
+
+
+costoFinal = precioOriginal - descuento + impuesto - descuentoCantidad + costoEnvio
+
+
+Imprimir "Precio original: " + precioOriginal
+Imprimir "Descuento: " + descuento
+Imprimir "Impuesto: " + impuesto
+Imprimir "Descuento por cantidad: " + descuentoCantidad
+Imprimir "Costo de envío: " + costoEnvio
+Imprimir "Costo final: " + costoFinal
+
+fin algoritmo
